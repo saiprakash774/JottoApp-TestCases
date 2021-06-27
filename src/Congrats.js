@@ -5,13 +5,14 @@
  * @returns {JSX.Element} -Rendered component (or null if `success` prop is false )
  */
 
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Congrats({ success }) {
+function Congrats(props) {
     if (props.success) {
         return (
             <div data-test="component-congrats">
-                <span data-test="congrats=message">
+                <span data-test="congrats-message">
                     Congratulations! You guessed the wordd !!!
                 </span>
             </div>
@@ -21,8 +22,10 @@ function Congrats({ success }) {
             <div data-test="component-congrats" />
         );
     }
-    <div>
-    </div>
 }
+
+Congrats.PropTypes={
+    success:PropTypes.bool
+};
 
 export default Congrats
